@@ -3208,3 +3208,745 @@ Processing by ArticlesController#home as HTML
   [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10
   Rendered articles/home.html.erb within layouts/application (1.1ms)
 Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:32:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#home as HTML
+  [1m[35mArticle Load (1.3ms)[0m  SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10
+  Rendered articles/home.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 266ms (Views: 242.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:44:35 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:44:38 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:44:39 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (21.1ms)
+  Rendered articles/new.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:44:46 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9tnNckkpoW0WdQA4GgqQwMbNMA7vZu0U/NuBULFIPey/lDGi8TmMoICGWoNMmeH0MsORHDfgVDq8qIFaoImOyQ==", "article"=>{"title"=>"1", "billboard"=>"1", "body"=>"1"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "1"], ["billboard", "1"], ["body", "1"], ["created_at", "2017-03-15 04:44:46.941739"], ["updated_at", "2017-03-15 04:44:46.941739"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 15ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/articles/1" for ::1 at 2017-03-15 01:44:46 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (1.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 26ms (Views: 17.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:44:48 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:44:51 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:44:52 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (34.5ms)
+  Rendered articles/new.html.erb within layouts/application (35.9ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:44:55 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h+iOFTyQrg7CkcuRWBm4E1hvM3KpzxDe4mTsuInB1t3OpXLFhICDw1RikSoOisknrGGSYHFJqfCiF+yymABl+A==", "article"=>{"title"=>"2", "billboard"=>"2", "body"=>"2"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "2"], ["billboard", "2"], ["body", "2"], ["created_at", "2017-03-15 04:44:55.907900"], ["updated_at", "2017-03-15 04:44:55.907900"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/2" for ::1 at 2017-03-15 01:44:55 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered articles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:44:58 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:44:59 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:45:01 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (2.1ms)
+  Rendered articles/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:45:04 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qUcOA55FuJSQ4wrLbZq4rx0Ew0EcG+a2dd7zcvPMTMzgCvLTJlWVWQYQUHA7Ccmb6QpiU8SdX5g1rfN44g3/6Q==", "article"=>{"title"=>"3", "billboard"=>"3", "body"=>"3"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "3"], ["billboard", "3"], ["body", "3"], ["created_at", "2017-03-15 04:45:04.133468"], ["updated_at", "2017-03-15 04:45:04.133468"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/3
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/3" for ::1 at 2017-03-15 01:45:04 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered articles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:45:05 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/2" for ::1 at 2017-03-15 01:45:09 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.8ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:45:11 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:45:11 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/2/edit" for ::1 at 2017-03-15 01:45:13 -0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered articles/_form.html.erb (1.8ms)
+  Rendered articles/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/articles/2" for ::1 at 2017-03-15 01:45:26 -0300
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wMXNB6tuP1d+wvVuacRWwj7A6Q26vfyjVbhfCb1rPMqJiDHXE34Smugxr9U/Vyf2ys5IH2I7RY0Vy18DrKqP7w==", "article"=>{"title"=>"0", "billboard"=>"0", "body"=>"0"}, "commit"=>"Update Article", "id"=>"2"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "articles" SET "title" = $1, "billboard" = $2, "body" = $3, "updated_at" = $4 WHERE "articles"."id" = $5  [["title", "0"], ["billboard", "0"], ["body", "0"], ["updated_at", "2017-03-15 04:45:26.672415"], ["id", 2]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/articles/2" for ::1 at 2017-03-15 01:45:26 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:45:28 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 27.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:45:35 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:45:42 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:45:46 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 44ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:46:07 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (2.5ms)
+  Rendered articles/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:46:11 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pt8tSQ/29syMSqqPAUxB3lau0vt5QOjVpAr+JQ/LDDN3ktGZt+bbARq58DRX3zDqoqBz6aHGUfvkef4vHgq/Fg==", "article"=>{"title"=>"a", "billboard"=>"a", "body"=>"a"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "a"], ["billboard", "a"], ["body", "a"], ["created_at", "2017-03-15 04:46:11.187779"], ["updated_at", "2017-03-15 04:46:11.187779"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/4
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/4" for ::1 at 2017-03-15 01:46:11 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered articles/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:46:12 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:46:13 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:46:15 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (1.8ms)
+  Rendered articles/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:46:19 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IHO3uUHvgISRHIIZ2SmAX+YSPnQNuQb4ioxaoVeqbntpPktp+f+tSQfv2KKPuvFrEhyfZtU/v9bK/1qrRmvdXg==", "article"=>{"title"=>"b", "billboard"=>"b", "body"=>"b"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "b"], ["billboard", "b"], ["body", "b"], ["created_at", "2017-03-15 04:46:19.174479"], ["updated_at", "2017-03-15 04:46:19.174479"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/5" for ::1 at 2017-03-15 01:46:19 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered articles/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:46:20 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:46:21 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:46:22 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (3.0ms)
+  Rendered articles/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 33ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:46:25 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"knK7juO9xS4yHwlpX7IigfbZfi9WxUZcRk1ixWGaAIPbP0deW63o46TsU9IJIVO1AtffPY5D/3IGPmLPcFuzpg==", "article"=>{"title"=>"c", "billboard"=>"c", "body"=>"c"}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "c"], ["billboard", "c"], ["body", "c"], ["created_at", "2017-03-15 04:46:25.412721"], ["updated_at", "2017-03-15 04:46:25.412721"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/6
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/articles/6" for ::1 at 2017-03-15 01:46:25 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered articles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:46:26 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:46:33 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/5/edit" for ::1 at 2017-03-15 01:46:37 -0300
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered articles/_form.html.erb (1.9ms)
+  Rendered articles/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/articles/5" for ::1 at 2017-03-15 01:46:43 -0300
+Processing by ArticlesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tgS0gvfPFNU7dmI/tR6T/IVWBMI20kJ+Yt90EFYWVWf/SUhST985GK2FOITjjeLIcVil0O5U+1AirHQaR9fmQg==", "article"=>{"title"=>"d", "billboard"=>"d", "body"=>"d"}, "commit"=>"Update Article", "id"=>"5"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "articles" SET "title" = $1, "billboard" = $2, "body" = $3, "updated_at" = $4 WHERE "articles"."id" = $5  [["title", "d"], ["billboard", "d"], ["body", "d"], ["updated_at", "2017-03-15 04:46:43.215510"], ["id", 5]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/5" for ::1 at 2017-03-15 01:46:43 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mArticle Load (0.8ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered articles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:46:44 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:46:50 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:47:06 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:47:08 -0300
+Processing by ArticlesController#home as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10
+  Rendered articles/home.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:47:09 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:47:09 -0300
+Processing by ArticlesController#home as HTML
+  [1m[35mArticle Load (0.9ms)[0m  SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10
+  Rendered articles/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:47:09 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.9ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:47:11 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/articles/2" for ::1 at 2017-03-15 01:47:37 -0300
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iyzokMVDN8chIarlIPPGN256q1UBjtzSTvGWR7SnKh7CYRRAfVMaCrfS8F52YLcDmnQKR9kIZfwOgpZNpWaZOw==", "id"=>"2"}
+  [1m[36mArticle Load (0.7ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:47:37 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:47:46 -0300
+Processing by ArticlesController#home as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10
+  Rendered articles/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:53:07 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/articles/5" for ::1 at 2017-03-15 01:53:14 -0300
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vCclFqMKoK06xe3Be0WTYyPu3k9xRl2kzVj0YdGBGob1atnGGxqNYKw2t3ot1uJX1+B/XanA5IqNK/RrwECpow==", "id"=>"5"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = $1  [["id", 5]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:53:14 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.7ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/articles/6" for ::1 at 2017-03-15 01:53:19 -0300
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CsyJ5gX4/glPPUzFcXb2cPBoXlZ/kmQ102t8W+UKIAxDgXU2vejTxNnOFn4n5YdEBGb/RKcU3RuTGHxR9MuTKQ==", "id"=>"6"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 3ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:53:19 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.6ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/articles/4" for ::1 at 2017-03-15 01:53:23 -0300
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fVmXli9ydBJjwdOitPvKHenryFCCC4eCqo4hEvVEbF40FGtGl2JZ3/UyiRniaLspHeVpQlqNPqzq/SEY5IXfew==", "id"=>"4"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = $1  [["id", 4]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 2ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:53:23 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.7ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/articles/3" for ::1 at 2017-03-15 01:53:24 -0300
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bOoVgmKPHj7RJg+jJUV21Cyrw0LI8aRQ6nEBMZuI/MAlp+lS2p8z80fVVRhz1gfg2KViUBB3HX6qAgE7iklP5Q==", "id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "articles" WHERE "articles"."id" = $1[0m  [["id", 3]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:53:24 -0300
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.7ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/articles/1" for ::1 at 2017-03-15 01:53:25 -0300
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9ov7iaQSJfQrl7MPzuVCvM48JrLYz1xOZqJM7LZyCI2/xgdZHAIIOb1k6bSYdjOIOjKHoABJ5WAm0Uzmp7O7qA==", "id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = $1  [["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:53:25 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.7ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:53:26 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (3.1ms)
+  Rendered articles/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:54:27 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A7M68u8rhavyBKU/1i2bfn/3+K+RqeG92uEuG++wbslK/sYiVzuoZmT3/4SAvupKi/lZvUkvWJOaki4R/nHd7A==", "article"=>{"title"=>"Ley de maltrato contra niños, discapacitados y adultos mayores fue aprobada por mayoría en el Senado", "billboard"=>"La aprobación de este proyecto significa un paso histórico, pues sanciona el maltrato hacia estas personas sin exigir requisitos de reiteración de las conductas.", "body"=>"SANTIAGO.- Con 24 votos a favor, 13 abstenciones y ninguno en contra fue despachada en su último trámite en el Senado el proyecto de ley de maltrato contra niños, niñas y adolescentes, adultos mayores y personas en situación de discapacidad. La aprobación de este proyecto de ley significa un paso histórico, pues sanciona el maltrato hacia estas personas sin exigir requisitos de reiteración de las conductas. El proyecto reconoce que existen ciertas situaciones de maltrato que merecen una mayor protección penal. Las normas actualmente vigentes sancionan las agresiones únicamente cuando éstas provocan lesiones, con la nueva ley sin embargo todos aquellos maltratos y abusos no constitutivos de lesiones, que se cometían en residencias de adultos mayores, en colegios o en instituciones encargadas de entregar tratamiento a personas en situación de discapacidad, también recibirán sanción. Lo novedoso de esta nueva figura es que basta un acto de maltrato corporal único “relevante” para que se configure el delito, diferenciándose del maltrato habitual que regula la ley de violencia intrafamiliar, pero también de las lesiones, por cuanto no se exige que el maltrato cause un daño (resultado de lesión corporal) en la integridad física del ofendido. Con este proyecto, la legislación viene a ofrecer protección a un grupo numeroso de personas que hasta ahora no recibía respuesta alguna. La sanción tiene una pena de prisión en cualquiera de sus grados (de 1 a 60 días) o multa de 1 a 4 UTM. Con igual sanción se castigará al que ejerciere este maltrato contra quien sea o haya sido su cónyuge o conviviente. Esta pena se eleva a presidio menor en su grado mínimo (61 a 540 días) cuando exista un deber especial de cuidado o protección por parte del maltratador. Lo anterior significa sancionar aquellos casos de violencia relevante que no producen lesión. Además, este proyecto de ley sanciona al que somete a alguna de las personas ya mencionadas a un trato degradante menoscabando gravemente su dignidad con pena de presidio menor en su grado mínimo (61 a 540 días). Como penas accesorias a las ya nombradas se establece la de inhabilidad absoluta, temporal o perpetua, para ejercer cargos en ámbitos educacionales, de la salud o que involucren una relación directa y habitual con las personas señaladas. Para dar efectividad a esta inhabilidad, existirá un registro especial de condenados por maltrato que podrá ser consultado por quiénes ofrezcan dichas funciones y evita la reincidencia de estas personas. Por su parte, el presidente de la comisión de Infancia del Senado, Patricio Walker, calificó como una gran noticia el despacho del proyecto, que quedó listo para ser ley de la República. Según el senador Walker, \"estamos aprobando una ley que sanciona el maltrato contra niños, discapacitados y adultos mayores. Hoy en día esto no se sanciona, salvo que haya lesiones. Hemos visto tantos reportajes de hogares de niños, de adultos mayores o sobre trabajadoras de casa particular que maltratan a los niños y no hay sanción porque no hay lesión, por lo tanto es muy relevante la aprobación de este proyecto\"."}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Ley de maltrato contra niños, discapacitados y adultos mayores fue aprobada por mayoría en el Senado"], ["billboard", "La aprobación de este proyecto significa un paso histórico, pues sanciona el maltrato hacia estas personas sin exigir requisitos de reiteración de las conductas."], ["body", "SANTIAGO.- Con 24 votos a favor, 13 abstenciones y ninguno en contra fue despachada en su último trámite en el Senado el proyecto de ley de maltrato contra niños, niñas y adolescentes, adultos mayores y personas en situación de discapacidad. La aprobación de este proyecto de ley significa un paso histórico, pues sanciona el maltrato hacia estas personas sin exigir requisitos de reiteración de las conductas. El proyecto reconoce que existen ciertas situaciones de maltrato que merecen una mayor protección penal. Las normas actualmente vigentes sancionan las agresiones únicamente cuando éstas provocan lesiones, con la nueva ley sin embargo todos aquellos maltratos y abusos no constitutivos de lesiones, que se cometían en residencias de adultos mayores, en colegios o en instituciones encargadas de entregar tratamiento a personas en situación de discapacidad, también recibirán sanción. Lo novedoso de esta nueva figura es que basta un acto de maltrato corporal único “relevante” para que se configure el delito, diferenciándose del maltrato habitual que regula la ley de violencia intrafamiliar, pero también de las lesiones, por cuanto no se exige que el maltrato cause un daño (resultado de lesión corporal) en la integridad física del ofendido. Con este proyecto, la legislación viene a ofrecer protección a un grupo numeroso de personas que hasta ahora no recibía respuesta alguna. La sanción tiene una pena de prisión en cualquiera de sus grados (de 1 a 60 días) o multa de 1 a 4 UTM. Con igual sanción se castigará al que ejerciere este maltrato contra quien sea o haya sido su cónyuge o conviviente. Esta pena se eleva a presidio menor en su grado mínimo (61 a 540 días) cuando exista un deber especial de cuidado o protección por parte del maltratador. Lo anterior significa sancionar aquellos casos de violencia relevante que no producen lesión. Además, este proyecto de ley sanciona al que somete a alguna de las personas ya mencionadas a un trato degradante menoscabando gravemente su dignidad con pena de presidio menor en su grado mínimo (61 a 540 días). Como penas accesorias a las ya nombradas se establece la de inhabilidad absoluta, temporal o perpetua, para ejercer cargos en ámbitos educacionales, de la salud o que involucren una relación directa y habitual con las personas señaladas. Para dar efectividad a esta inhabilidad, existirá un registro especial de condenados por maltrato que podrá ser consultado por quiénes ofrezcan dichas funciones y evita la reincidencia de estas personas. Por su parte, el presidente de la comisión de Infancia del Senado, Patricio Walker, calificó como una gran noticia el despacho del proyecto, que quedó listo para ser ley de la República. Según el senador Walker, \"estamos aprobando una ley que sanciona el maltrato contra niños, discapacitados y adultos mayores. Hoy en día esto no se sanciona, salvo que haya lesiones. Hemos visto tantos reportajes de hogares de niños, de adultos mayores o sobre trabajadoras de casa particular que maltratan a los niños y no hay sanción porque no hay lesión, por lo tanto es muy relevante la aprobación de este proyecto\"."], ["created_at", "2017-03-15 04:54:27.641580"], ["updated_at", "2017-03-15 04:54:27.641580"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/7
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/7" for ::1 at 2017-03-15 01:54:27 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 7]]
+  Rendered articles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:54:29 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:54:57 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:54:59 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (1.8ms)
+  Rendered articles/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:55:35 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"le/6AjUmvzGBXrpnlj6TYXkq8Np8wtSI+dtGl6XO3+ncogbSjTaS/Bet4NzAreJVjSRRyKREbaa5qEadtA9szA==", "article"=>{"title"=>"Gobierno de Venezuela rechaza informe de Almagro y acusa de golpista a la OEA", "billboard"=>"La Cancillería del gobierno de Nicolás Maduro repudió el crítico informe del secretario general del organismo sobre la situación democrática del país.", "body"=>"CARACAS.- El Gobierno venezolano repudió hoy el crítico informe sobre el país que presentó el secretario general de la Organización de Estados Americanos (OEA), Luis Almagro, y acusó a la autoridad uruguaya de \"reanimar las páginas más oscuras de la historia intervencionista y golpista\" de esa organización continental. En un comunicado, la Cancillería venezolana tildó de \"ilegítimo\" e \"ilícito\" el informe que elaboró Almagro, \"desconociendo los procesos institucionales y principios de esta organización\", en el que propuso suspender a Venezuela de la OEA si no celebra elecciones generales a la mayor brevedad."}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Gobierno de Venezuela rechaza informe de Almagro y acusa de golpista a la OEA"], ["billboard", "La Cancillería del gobierno de Nicolás Maduro repudió el crítico informe del secretario general del organismo sobre la situación democrática del país."], ["body", "CARACAS.- El Gobierno venezolano repudió hoy el crítico informe sobre el país que presentó el secretario general de la Organización de Estados Americanos (OEA), Luis Almagro, y acusó a la autoridad uruguaya de \"reanimar las páginas más oscuras de la historia intervencionista y golpista\" de esa organización continental. En un comunicado, la Cancillería venezolana tildó de \"ilegítimo\" e \"ilícito\" el informe que elaboró Almagro, \"desconociendo los procesos institucionales y principios de esta organización\", en el que propuso suspender a Venezuela de la OEA si no celebra elecciones generales a la mayor brevedad."], ["created_at", "2017-03-15 04:55:35.286350"], ["updated_at", "2017-03-15 04:55:35.286350"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/8
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/8" for ::1 at 2017-03-15 01:55:35 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered articles/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:55:42 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:55:44 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:55:45 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (2.0ms)
+  Rendered articles/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:56:32 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XeRTfESb5A2mIiIV7cquHM9HszaO9YHaOs0zXt/MJ5IUqa+s/IvJwDDReK67Wd8oO0kSJFZzOPR6vjNUzg2Utw==", "article"=>{"title"=>"Tribunal de Disciplina de la ANFP retrasa fallo y el \"caso planillas\" contra Colo Colo sigue en estudio", "billboard"=>"Luego de una audiencia, no hubo acuerdo y habrá que esperar en los próximos días una resolución final. En tanto, Mario Salas solo recibió una fecha y podrá dirigir ante Cobresal.", "body"=>"SANTIAGO.- Continúa el suspenso. Se esperaba un fallo hoy de parte del Tribunal de Disciplina de la ANFP con respecto al \"caso planillas\" que podría afectar a Colo Colo, pero finalmente no se llegó a una resolución. Este martes el Tribunal recibió en Quilín a dirigentes de los clubes denunciantes (Unión Española, Temuco y O'Higgins) y a los encargados de la defensa del Cacique. Tras una larga audiencia, no hubo un pronunciamiente de parte del organismo, aunque aseguraron que los equipos que acusan a Colo Colo quieren que se le reste los puntos. \"Los denunciantes solicitan expresamente que haya una resta de puntos al denunciado (Colo Colo. Esperamos resolver lo más pronto posible, ojalá antes del próximo martes\", aseguró el presidente del Tribunal, Exequiel Segall. En esa misma línea, el directvo agregó que \"hoy día tuvimos una larga audiencia en que comparecieron denunciantes y denunciados.Ambos expusieron sus argumentos y es un caso complejo. Está todo en estudio y en discusión. Lo que hay discutir es si se aplica el artículo 53 (resta de unidades o el 37 (multa económica)\". De todas formas, del lado del Cacique hay optimismo y creen que sólo corresponde un castigo monetario. \"Hicimos nuestros descargos y preparamos todos los elementos de prueba para demostrar que no infringimos el artículo 53, ya que hay fotos que demuestran Salvatierra (Agustín) no estuvo ejerciendo tareas de ayudante físico. Escuchamos los alegatos de los otros clubes y estamos esperando\", sentenció Alejandro Paul, gerente general de Blanco y Negro. De esta forma, todo quedó en nada y habrá que espera en los próximos días para conocer la decisión final. Finalmente, el técnico de Universidad Católica, Mario Salas, fue sancionado con una fecha tras su expulsión en el clásico ante Colo Colo. De esta forma, queda habilitado para dirigir este fin de semana ante Cobresal."}, "commit"=>"Create Article"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Tribunal de Disciplina de la ANFP retrasa fallo y el \"caso planillas\" contra Colo Colo sigue en estudio"], ["billboard", "Luego de una audiencia, no hubo acuerdo y habrá que esperar en los próximos días una resolución final. En tanto, Mario Salas solo recibió una fecha y podrá dirigir ante Cobresal."], ["body", "SANTIAGO.- Continúa el suspenso. Se esperaba un fallo hoy de parte del Tribunal de Disciplina de la ANFP con respecto al \"caso planillas\" que podría afectar a Colo Colo, pero finalmente no se llegó a una resolución. Este martes el Tribunal recibió en Quilín a dirigentes de los clubes denunciantes (Unión Española, Temuco y O'Higgins) y a los encargados de la defensa del Cacique. Tras una larga audiencia, no hubo un pronunciamiente de parte del organismo, aunque aseguraron que los equipos que acusan a Colo Colo quieren que se le reste los puntos. \"Los denunciantes solicitan expresamente que haya una resta de puntos al denunciado (Colo Colo. Esperamos resolver lo más pronto posible, ojalá antes del próximo martes\", aseguró el presidente del Tribunal, Exequiel Segall. En esa misma línea, el directvo agregó que \"hoy día tuvimos una larga audiencia en que comparecieron denunciantes y denunciados.Ambos expusieron sus argumentos y es un caso complejo. Está todo en estudio y en discusión. Lo que hay discutir es si se aplica el artículo 53 (resta de unidades o el 37 (multa económica)\". De todas formas, del lado del Cacique hay optimismo y creen que sólo corresponde un castigo monetario. \"Hicimos nuestros descargos y preparamos todos los elementos de prueba para demostrar que no infringimos el artículo 53, ya que hay fotos que demuestran Salvatierra (Agustín) no estuvo ejerciendo tareas de ayudante físico. Escuchamos los alegatos de los otros clubes y estamos esperando\", sentenció Alejandro Paul, gerente general de Blanco y Negro. De esta forma, todo quedó en nada y habrá que espera en los próximos días para conocer la decisión final. Finalmente, el técnico de Universidad Católica, Mario Salas, fue sancionado con una fecha tras su expulsión en el clásico ante Colo Colo. De esta forma, queda habilitado para dirigir este fin de semana ante Cobresal."], ["created_at", "2017-03-15 04:56:32.934339"], ["updated_at", "2017-03-15 04:56:32.934339"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/9
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/9" for ::1 at 2017-03-15 01:56:32 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered articles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:56:34 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:56:35 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:57:12 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (1.8ms)
+  Rendered articles/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 45ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:57:48 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iLzBzHHTRImpdv52XWL/8y6HH00Dm0NVrsDPM5tGmzHB8T0cycNpRD+FpM0L8Y7H2om+X9sd+nvus885iocoFA==", "article"=>{"title"=>"Primer ministro chino: \"No queremos una guerra comercial entre China y EE.UU.\"", "billboard"=>"Li Keqiang también remarcó que la política de \"una sola China\" debe seguir siendo la base de las relaciones entre las mayores potencias mundiales para seguir expandiendo la cooperación.", "body"=>"BEIJING.- El Primer Ministro chino, Li Keqiang, aseguró hoy que China no quiere abrir una guerra comercial con Estados Unidos, que en su opinión no resultaría en un \"comercio más justo\". En la única rueda de prensa que celebra al año, el Primer Ministro se mostró optimista sobre el futuro de las relaciones entre las dos potencias mundiales y confirmó que diplomáticos de ambos países trabajan para concretar un encuentro próximo entre los presidentes Xi Jinping y Donald Trump. Li opinó que Washington y Beijing \"deben sentarse a hablar\" y aparcar sus diferencias. \"Somos optimistas sobre el futuro de las relaciones entre China y Estados Unidos, porque después de varias décadas de crecimiento, China y EE.UU. comparten ahora numerosos intereses\", manifestó Li, tras la clausura del pleno anual de la Asamblea Nacional Popular (Legislativo) en Beijing. Ante las críticas del nuevo inquilino de la Casa Blanca sobre la devaluación de la moneda china (el yuan) o la destrucción de empleo en EE.UU., el Primer Ministro sacó a relucir estadísticas que apuntan que la inversión y el comercio entre ambos países crearon hasta un millón de empleos el año pasado. \"Frente a las diferencias que tengamos, podemos sentarnos a hablar y trabajar juntos para buscar una solución. En cuanto a las diferencias que no podamos resolver por el momento, podemos aparcarlas y seguir centrándonos en ampliar nuestros intereses comunes\", manifestó Li en el Gran Palacio del Pueblo de Beijing. De este modo, el Primer Ministro auguró que las diferencias entre Beijing y Washington se irán reduciendo. A pesar del tono conciliador de sus declaraciones, el Primer Ministro también remarcó que la política de \"una sola China\" debe seguir siendo la base de las relaciones entre las mayores potencias mundiales para seguir expandiendo la cooperación. Li recordó que en la última llamada telefónica entre ambos líderes en febrero, Trump reafirmó a Xi su compromiso con mantener esta política, por la que EE.UU. reconoce que \"sólo existe una China\" en contra de las reclamaciones independentistas de Taiwán, lo que fue visto como un intento del nuevo presidente de enmendar las relaciones con Beijing después de poner en duda este compromiso."}, "commit"=>"Create Article"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Primer ministro chino: \"No queremos una guerra comercial entre China y EE.UU.\""], ["billboard", "Li Keqiang también remarcó que la política de \"una sola China\" debe seguir siendo la base de las relaciones entre las mayores potencias mundiales para seguir expandiendo la cooperación."], ["body", "BEIJING.- El Primer Ministro chino, Li Keqiang, aseguró hoy que China no quiere abrir una guerra comercial con Estados Unidos, que en su opinión no resultaría en un \"comercio más justo\". En la única rueda de prensa que celebra al año, el Primer Ministro se mostró optimista sobre el futuro de las relaciones entre las dos potencias mundiales y confirmó que diplomáticos de ambos países trabajan para concretar un encuentro próximo entre los presidentes Xi Jinping y Donald Trump. Li opinó que Washington y Beijing \"deben sentarse a hablar\" y aparcar sus diferencias. \"Somos optimistas sobre el futuro de las relaciones entre China y Estados Unidos, porque después de varias décadas de crecimiento, China y EE.UU. comparten ahora numerosos intereses\", manifestó Li, tras la clausura del pleno anual de la Asamblea Nacional Popular (Legislativo) en Beijing. Ante las críticas del nuevo inquilino de la Casa Blanca sobre la devaluación de la moneda china (el yuan) o la destrucción de empleo en EE.UU., el Primer Ministro sacó a relucir estadísticas que apuntan que la inversión y el comercio entre ambos países crearon hasta un millón de empleos el año pasado. \"Frente a las diferencias que tengamos, podemos sentarnos a hablar y trabajar juntos para buscar una solución. En cuanto a las diferencias que no podamos resolver por el momento, podemos aparcarlas y seguir centrándonos en ampliar nuestros intereses comunes\", manifestó Li en el Gran Palacio del Pueblo de Beijing. De este modo, el Primer Ministro auguró que las diferencias entre Beijing y Washington se irán reduciendo. A pesar del tono conciliador de sus declaraciones, el Primer Ministro también remarcó que la política de \"una sola China\" debe seguir siendo la base de las relaciones entre las mayores potencias mundiales para seguir expandiendo la cooperación. Li recordó que en la última llamada telefónica entre ambos líderes en febrero, Trump reafirmó a Xi su compromiso con mantener esta política, por la que EE.UU. reconoce que \"sólo existe una China\" en contra de las reclamaciones independentistas de Taiwán, lo que fue visto como un intento del nuevo presidente de enmendar las relaciones con Beijing después de poner en duda este compromiso."], ["created_at", "2017-03-15 04:57:48.841552"], ["updated_at", "2017-03-15 04:57:48.841552"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/10
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/articles/10" for ::1 at 2017-03-15 01:57:48 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:57:50 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.6ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles" for ::1 at 2017-03-15 01:57:54 -0300
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 26.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:57:57 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (1.8ms)
+  Rendered articles/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:58:25 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (2.8ms)
+  Rendered articles/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 85ms (Views: 84.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/articles/new" for ::1 at 2017-03-15 01:58:41 -0300
+Processing by ArticlesController#new as HTML
+  Rendered articles/_form.html.erb (2.4ms)
+  Rendered articles/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for ::1 at 2017-03-15 01:59:12 -0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FVFygZlU9S9xEFFmucYF6kaJA3W/FufMPZQjBnuYsZtcHI5RIUTY4ufjC93vVXTesoeiZ2eQXuJ95yMMalkCvg==", "article"=>{"title"=>"Condenan a cuatro años de cárcel remitidos a sujeto que hurtó espada de Manuel Bulnes", "billboard"=>"Héctor Zapata Contreras sustrajo el objeto conmemorativo el pasado 3 de agosto desde una de las vitrinas del Museo Histórico Nacional en la comuna de Santiago", "body"=>"SANTIAGO.- El Septimo Juzgado de Garantía sentenció a cuatro años de presidio, otorgándole el beneficio de libertad vigilada intensiva, al implicado en la sustracción de la espada del Presidente Manuel Bulnes. El acusado, Héctor Zapata Contreras, hurtó el objeto conmemorativo el pasado 3 de agosto desde una de las vitrinas del Museo Histórico Nacional en la comuna de Santiago. Marcelo Cabrera, fiscal de la causa, detalló que el imputado -acompañado de otro sujeto- ingresó al salón \"Consolidación del Orden Republicano\" y sustrajo la espada ceremonial del Presidente Bulnes, de acero, oro y piedras precisas que está avaluada en $450 millones. El fiscal solicitó la máxima pena aplicable en este caso por el delito de apropiación de monumento nacional, el objeto tiene ese carácter de acuerdo al Decreto Supremo N° 192 de mayo de 1985, pero el juzgado decidió que la pena fuera de cárcel remitida."}, "commit"=>"Create Article"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "articles" ("title", "billboard", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["title", "Condenan a cuatro años de cárcel remitidos a sujeto que hurtó espada de Manuel Bulnes"], ["billboard", "Héctor Zapata Contreras sustrajo el objeto conmemorativo el pasado 3 de agosto desde una de las vitrinas del Museo Histórico Nacional en la comuna de Santiago"], ["body", "SANTIAGO.- El Septimo Juzgado de Garantía sentenció a cuatro años de presidio, otorgándole el beneficio de libertad vigilada intensiva, al implicado en la sustracción de la espada del Presidente Manuel Bulnes. El acusado, Héctor Zapata Contreras, hurtó el objeto conmemorativo el pasado 3 de agosto desde una de las vitrinas del Museo Histórico Nacional en la comuna de Santiago. Marcelo Cabrera, fiscal de la causa, detalló que el imputado -acompañado de otro sujeto- ingresó al salón \"Consolidación del Orden Republicano\" y sustrajo la espada ceremonial del Presidente Bulnes, de acero, oro y piedras precisas que está avaluada en $450 millones. El fiscal solicitó la máxima pena aplicable en este caso por el delito de apropiación de monumento nacional, el objeto tiene ese carácter de acuerdo al Decreto Supremo N° 192 de mayo de 1985, pero el juzgado decidió que la pena fuera de cárcel remitida."], ["created_at", "2017-03-15 04:59:12.715430"], ["updated_at", "2017-03-15 04:59:12.715430"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/articles/11
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/articles/11" for ::1 at 2017-03-15 01:59:12 -0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mArticle Load (0.2ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered articles/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:59:39 -0300
+Processing by ArticlesController#home as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10[0m
+  Rendered articles/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2017-03-15 01:59:43 -0300
+Processing by ArticlesController#home as HTML
+  [1m[35mArticle Load (0.9ms)[0m  SELECT  "articles".* FROM "articles"  ORDER BY "articles"."id" DESC LIMIT 10
+  Rendered articles/home.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 0.9ms)
